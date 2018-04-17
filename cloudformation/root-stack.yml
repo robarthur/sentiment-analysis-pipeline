@@ -1,0 +1,10 @@
+---
+#Root for nested cloudformation stacks to support our sentiment analysis pipeline
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Root stack for sentiment analysis pipeline
+Resources:
+  DataPipelineInfrastructure:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: "./data-pipeline-infrastructure.yml"
+      TimeoutInMinutes: "10"
